@@ -25,7 +25,7 @@ SECRET_KEY = '9ya270dtkc8c2l5lyp+1)#&+$%$@q3mfyjb+l6$3@yn2d!8bmf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['eztrade.herokuapp.com']
+ALLOWED_HOSTS = ['eztrade.herokuapp.com','localhost','127.0.0.1']
 
 
 # Application definition
@@ -138,7 +138,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'build/static'),
 ]
-STATICFILES_STORAGE = 'whitenoise.django.GzipMainifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHETICATION_CLASSES': [
@@ -147,7 +147,7 @@ REST_FRAMEWORK = {
 }
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),'EZtrade/EZtrades')
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),'EZtrade')
 CORS_ORIGIN_ALLOW_ALL = True
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
