@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.photo {
+  height: 100px;
+  width: 150px;
+  text-align: left;
+  position: relative;
+  left: 0px;
+  margin-right: 2rem;
+}
+
+.randomText{
+  margin-right: 1rem;
+  display: inline-block;
+  font-size: 1rem;
+}
+.phortoSmall {
+  height: 100px;
+  width: 150px;
+  text-align: right;
+  position: relative;
+  left: 80rem;
+}
+
+.searchAndAdd{
+  display: flex;
+  margin-right: 1rem;
+}
+.preventtextoverflow{
+  
+  width:80rem;
+  word-wrap: break-word;
+
+}
+.fromclass{
+  font-size: 1.5rem;
+}
+
+.loginprofilebuttons{
+  margin-left: auto;
+  margin-right: 1.5rem;
+}
+.link{
+  color: #FFF;
+  text-decoration: underline;
+}
+.profilebutton{
+  margin-right: 1rem;
+}
+.navbuttons{
+  display: flex;
+  font-size: 1.9rem;
+}
+.searchbar{
+  width: 50rem;
+  position: relative;
+  top: -3rem;
+  margin-left: 2px;
+  
+  margin-right: 28rem;
+
+  
+ 
+}
+.filtericon{
+  position: relative;
+  top:.35rem;
+  right: .4rem;
+  margin-left: auto;
+  
+  
+}
+.filtersearch{
+  width: 10rem;
+}
+
+
+
+
+
