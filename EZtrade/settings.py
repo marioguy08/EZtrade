@@ -25,7 +25,7 @@ SECRET_KEY = '9ya270dtkc8c2l5lyp+1)#&+$%$@q3mfyjb+l6$3@yn2d!8bmf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['eztrade.herokusapp.com']
+ALLOWED_HOSTS = ['eztrade.herokuapp.com']
 
 
 # Application definition
