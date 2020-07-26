@@ -99,8 +99,9 @@ export const authCheckState = () => {
     return dispatch => {
         const token = localStorage.getItem('token');
         const currentUsername = localStorage.getItem('currentUsername');
+        var newuser = ""
         if(currentUsername){
-            currentUsername = currentUsername.replace(/"/g, "");
+            newuser = currentUsername.replace(/"/g, "");
         }
         
         console.log(currentUsername);
@@ -111,7 +112,7 @@ export const authCheckState = () => {
             if (expirationDate <= new Date()) {
                 dispatch(logout());
             } else {
-                dispatch(authSuccess(token, currentUsername));
+                dispatch(authSuccess(token, newuser));
                 dispatch(checkAuthTimeout((expirationDate.getTime() - new Date().getTime()) / 1000))
             }
         }

@@ -27,7 +27,7 @@ class ArticleDetail extends React.Component {
             console.log('bad');
         }
         const articleID = this.props.match.params.articleID;
-        axios.get(`http://127.0.0.1:8000/api/articles/${articleID}`)
+        axios.get(`http://127.0.0.1:8000/api/articles/${articleID}/`)
             .then(res => {
                 if (this.props.currentUsername == res.data.createdBy) {
                     this.setState({
@@ -48,7 +48,7 @@ class ArticleDetail extends React.Component {
     }
     componentWillReceiveProps(newProps) {
         const articleID = this.props.match.params.articleID;
-        axios.get(`http://127.0.0.1:8000/api/trade/?instigatorUsername=${newProps.currentUsername}&recieverProductID=${articleID}`)
+        axios.get(`http://127.0.0.1:8000/api/trade/?instigatorUsername=${newProps.currentUsername}&recieverProductID=${articleID}/`)
             .then(res => {
                 console.log(res);
                 if (res.data.length > 0) {
@@ -71,7 +71,7 @@ class ArticleDetail extends React.Component {
                 "Content-Type": "application/json",
                 Authorization: `Token ${this.props.token}`
             }
-            axios.delete(`http://127.0.0.1:8000/api/articles/${articleID}`).then(res => console.log(res)).catch(error => console.error(error));
+            axios.delete(`http://127.0.0.1:8000/api/articles/${articleID}/`).then(res => console.log(res)).catch(error => console.error(error));
         } else {
         }
     }
