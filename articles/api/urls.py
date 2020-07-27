@@ -1,11 +1,12 @@
 from rest_framework.routers import DefaultRouter
+from django.conf.urls.static import static
+from django.conf import settings
 from .views import ArticleViewSet,TradeViewSet,UserDataViewSet
 router = DefaultRouter()
 router.register(r'articles', ArticleViewSet, basename='articles')
 router.register(r'trade', TradeViewSet, basename='trade')
 router.register(r'users', UserDataViewSet, basename='users')
-#router.register(r'articlesPublic', ArticleListView, basename='articlesPublic')
-urlpatterns = router.urls
+urlpatterns = router.urls + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 

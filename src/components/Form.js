@@ -42,7 +42,7 @@ class CustomForm extends React.Component {
                     "Content-Type": "application/json",
                     Authorization: `Token ${this.props.token}`
                 }
-                Axios.get(`http://127.0.0.1:8000/api/users?username=${this.props.currentUsername}/`).then(res => {
+                Axios.get(`http://127.0.0.1:8000/api/users/?username=${this.props.currentUsername}`).then(res => {
 
                     const uploadData = new FormData();
                     uploadData.append('title', title);

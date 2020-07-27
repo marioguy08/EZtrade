@@ -39,14 +39,12 @@ class UserDataViewSet(viewsets.ModelViewSet):
     serializer_class = UserDataSerializer
     queryset = UserData.objects.all()
     filter_backends = [DjangoFilterBackend]
-    filerset_fields = ['username','city']
-    authentication_classes = (TokenAuthentication,) # Add this line
-    permission_classes = (IsAuthenticated,)
-    def get_permissions(self):
-        if self.action == 'list' or self.action == 'retrieve':
-            return [AllowAny(), ]        
-        return super(UserDataViewSet, self).get_permissions()
+    filterset_fields = ['username','city']
+    
+'''
 
+
+'''
 
 
 '''
