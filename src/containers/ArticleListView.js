@@ -35,7 +35,7 @@ class ArticleList extends React.Component {
 
     componentWillReceiveProps(newProps) {// draws articles no matter what 
         console.log(newProps);
-        axios.get(`http://eztrade.herokuapp.com/api/articles/?search=${newProps.searchterm}&traded=false`)
+        axios.get(`https://eztrade.herokuapp.com/api/articles/?search=${newProps.searchterm}&traded=false`)
             .then(res => {
                 this.setState({
                     articles: res.data
@@ -46,7 +46,7 @@ class ArticleList extends React.Component {
     }
     componentDidMount() {
         if (this.props.searchterm) {
-            axios.get(`http://eztrade.herokuapp.com/api/articles/?search=${this.props.searchterm}&traded=false`)
+            axios.get(`https://eztrade.herokuapp.com/api/articles/?search=${this.props.searchterm}&traded=false`)
                 .then(res => {
                     this.setState({
                         articles: res.data
@@ -54,7 +54,7 @@ class ArticleList extends React.Component {
                     console.log(res.data)
                 })
         } else {
-            axios.get('http://eztrade.herokuapp.com/api/articles/?traded=false')
+            axios.get('https://eztrade.herokuapp.com/api/articles/?traded=false')
                 .then(res => {
                     this.setState({
                         articles: res.data
@@ -65,7 +65,7 @@ class ArticleList extends React.Component {
     }
 
     repopulate = () => {
-        axios.get('http://eztrade.herokuapp.com/api/articles/?traded=false')
+        axios.get('https://eztrade.herokuapp.com/api/articles/?traded=false')
             .then(res => {
                 this.setState({
                     articles: res.data
@@ -95,7 +95,7 @@ class ArticleList extends React.Component {
     }
 
     handleSearch = (value) => {
-        axios.get(`http://eztrade.herokuapp.com/api/articles/?search=${value}&traded=false`)
+        axios.get(`https://eztrade.herokuapp.com/api/articles/?search=${value}&traded=false`)
             .then(res => {
                 this.setState({
                     articles: res.data
