@@ -43,19 +43,35 @@ class CustomLayout extends React.Component {
         return (
             <Layout className="layout">
 
-                <Header>
+                <div className="mainheader">
                     <div className="menutop">
 
+
                         <a href="/"><img className="logo" src={Logo} /></a>
-                        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+                        
+                            <div className="filterandsearch">
+                                <div id="cityselector" className="cityfilter">
+                                    <AutoComplete
+                                        allowClear="true"
+                                        spellcheck="false"
+                                        onSelect={(val) => { this.handlecity(val) }}
+                                        onChange={(val) => { this.handlecity2(val) }}
+                                        defaultOpen={false}
+                                        style={{ width: 140 }}
+                                        options={options}
+                                        placeholder="Filter By City (US)"
+                                        filterOption={(inputValue, option) =>
+                                            option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+                                        }
 
-                        </Menu>
+                                    />
+                                </div>
+                                <div className="searchbar">
+                                    <Search placeholder="Search EZtrade" onSearch={value => { this.handlerequest(value) }} enterButton />
+                                </div>
 
-
-
+                            </div>
                         <div className="loginprofilebuttons" >
-
-
                             {
                                 this.props.isAuthenticated ?
 
@@ -77,32 +93,11 @@ class CustomLayout extends React.Component {
                         </div>
                     </div>
 
-                </Header>
+                </div>
 
                 <Content style={{ padding: '0 50px' }}>
-                    <div className="filterandsearch">
-                        <div id="cityselector" className="cityfilter">
-                            <AutoComplete
-                                allowClear="true"
-                                spellcheck="false"
-                                onSelect={(val) => { this.handlecity(val) }}
-                                onChange={(val) => { this.handlecity2(val) }}
-                                defaultOpen={false}
-                                style={{ width: 140 }}
-                                options={options}
-                                placeholder="Filter By City (US)"
-                                filterOption={(inputValue, option) =>
-                                    option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
-                                }
 
-                            />
-                        </div>
-                        <div className="searchbar">
-                            <Search placeholder="Search EZtrade" onSearch={value => { this.handlerequest(value) }} enterButton />
-                        </div>
 
-                    </div>
-                   
                     <div className="site-layout-content">
                         <BaseRouter searchterm={this.state.searchterm} />
                     </div>

@@ -108,6 +108,7 @@ class ArticleList extends React.Component {
         const { Search } = Input;
         return (
             <div>
+                
                 <div className='listandfilter'>
                     <div className="searchAndAdd" >
                         {
@@ -133,12 +134,7 @@ class ArticleList extends React.Component {
                         }
 
                     </div>
-
-
-                    <div className="filtersearch">
-
-                    </div>
-
+                    
                 </div>
 
                 <h2>{

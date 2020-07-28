@@ -49,8 +49,10 @@ code {
 }
 
 .loginprofilebuttons{
-  margin-left: auto;
-  margin-right: 1.5rem;
+  position: relative;
+  bottom: -.1rem;
+  margin-left: 6vw;
+  margin-right: 4.5rem;
 }
 .link{
   color: #FFF;
@@ -62,25 +64,15 @@ code {
 .navbuttons{
   display: flex;
   font-size: 1.9rem;
-}
-.searchbar{
-  width: 50rem;
   position: relative;
-  top: -3rem;
-  margin-left: 2px;
-  
-  margin-right: 28rem;
-
-  
- 
+  bottom: -.3rem;
 }
+
 .filtericon{
   position: relative;
   top:.35rem;
   right: .4rem;
   margin-left: auto;
-  
-  
 }
 .filtersearch{
   width: 10rem;
