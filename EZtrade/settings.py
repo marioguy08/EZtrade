@@ -27,7 +27,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['eztrade.herokuapp.com','localhost','127.0.0.1']
 
-
+AWS_ACCESS_KEY_ID = 'AKIAI7CEPYFL7PM2XKXQ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_S3_ADDRESSING_STYLE = "virtual"
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_STORAGE_BUCKET_NAME = 'eztradeimages'
+AWS_S3_REGION_NAME = 'us-east-2'
 # Application definition
 
 INSTALLED_APPS = [
@@ -44,6 +49,7 @@ INSTALLED_APPS = [
     'rest_auth',
     'django.contrib.sites',
     'allauth',
+    'storages',
     'allauth.account',
     'allauth.socialaccount',
     'rest_auth.registration',
@@ -146,8 +152,8 @@ REST_FRAMEWORK = {
     ]
 }
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),'eztrade')
+#MEDIA_URL = '/media/'
+#MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),'eztrade')
 CORS_ORIGIN_ALLOW_ALL = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 

@@ -58,12 +58,7 @@ class CustomForm extends React.Component {
 
 
 
-            case 'put':
-                return Axios.put(`http://127.0.0.1:8000/api/${articleID}/`, {
-                    title: title,
-                    content: content,
-                    createdBy: this.props.currentUsername,
-                }).then(res => console.log(res)).catch(error => console.error(error));
+            
         }
     }
 

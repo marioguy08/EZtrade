@@ -6,7 +6,7 @@ router = DefaultRouter()
 router.register(r'articles', ArticleViewSet, basename='articles')
 router.register(r'trade', TradeViewSet, basename='trade')
 router.register(r'users', UserDataViewSet, basename='users')
-urlpatterns = router.urls + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns = router.urls
 
 
 

@@ -38,8 +38,19 @@ class ArticleDetail extends React.Component {
                 this.setState({
                     article: res.data
                 });
+                axios.get(`http://127.0.0.1:8000/api/trade/?instigatorUsername=${this.props.currentUsername}&recieverProductID=${articleID}`)
+                    .then(res => {
+                        console.log(res);
+                        if (res.data.length > 0) {
+                            this.setState({
+                                alreadyTraded: true
+                            })
+                        }
+                    })
 
             })
+
+
 
 
 
@@ -47,16 +58,7 @@ class ArticleDetail extends React.Component {
 
     }
     componentWillReceiveProps(newProps) {
-        const articleID = this.props.match.params.articleID;
-        axios.get(`http://127.0.0.1:8000/api/trade/?instigatorUsername=${newProps.currentUsername}&recieverProductID=${articleID}/`)
-            .then(res => {
-                console.log(res);
-                if (res.data.length > 0) {
-                    this.setState({
-                        alreadyTraded: true
-                    })
-                }
-            })
+
     }
 
 
@@ -104,7 +106,7 @@ class ArticleDetail extends React.Component {
                             }
 
                             <form onSubmitCapture={this.handleDelete}>
-                                <Button style={{backgroundColor:'#fa1212',borderColor:'#fa1212'}} type="danger" htmlType="submit">Delete (all data related to this listing will be gone forever)</Button>
+                                <Button style={{ backgroundColor: '#fa1212', borderColor: '#fa1212' }} type="danger" htmlType="submit">Delete (all data related to this listing will be gone forever)</Button>
 
                             </form>
                         </div>

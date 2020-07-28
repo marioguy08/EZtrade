@@ -32,13 +32,15 @@ class RequestList extends React.Component {
             }
             axios.get(`http://localhost:8000/api/trade/?recieverUsername=${this.props.currentUsername}&completed=false`)
                 .then(res => {
+                
                     var array = res.data;
                     var arrayLength = array.length;
                     for (let i = 0; i < arrayLength; i++) {
                         var itemid = array[i].instigatorProductID;
                         var itemid2 = array[i].recieverProductID;
-                        axios.get(`http://localhost:8000/api/articles/${itemid}`)
+                        axios.get(`http://localhost:8000/api/articles/${itemid}/`)
                             .then(res => {
+                                
                                 var temp = i;
                                 const temp2 = temp;
                                 array[i].instigatorImage = res.data.image;
@@ -48,8 +50,9 @@ class RequestList extends React.Component {
                                     requests: array
                                 });
                             }).catch(error => console.error(error));
-                        axios.get(`http://localhost:8000/api/articles/${itemid2}`)
+                        axios.get(`http://localhost:8000/api/articles/${itemid2}/`)
                             .then(res => {
+                               
                                 var temp = i;
                                 const temp2 = temp;
                                 array[i].recieverImage = res.data.image;
