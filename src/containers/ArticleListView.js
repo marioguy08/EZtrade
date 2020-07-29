@@ -14,7 +14,6 @@ function updateState() {
 }
 
 class ArticleList extends React.Component {
-
     state = {
         isloggedin: false,
         articles: [],
@@ -35,13 +34,23 @@ class ArticleList extends React.Component {
 
     componentWillReceiveProps(newProps) {// draws articles no matter what 
         console.log(newProps);
-        axios.get(`https://eztrade.herokuapp.com/api/articles/?search=${newProps.searchterm}&traded=false`)
-            .then(res => {
-                this.setState({
-                    articles: res.data
-                });
-                console.log(res.data)
-            })
+        if (newProps.searchterm === "") {
+            axios.get(`https://eztrade.herokuapp.com/api/articles/?traded=false&city=${newProps.city}`)
+                .then(res => {
+                    this.setState({
+                        articles: res.data
+                    });
+                    console.log(res.data)
+                })
+        } else {
+            axios.get(`https://eztrade.herokuapp.com/api/articles/?traded=false&city=${newProps.city}&search=${newProps.searchterm}`)
+                .then(res => {
+                    this.setState({
+                        articles: res.data
+                    });
+                    console.log(res.data)
+                })
+        }
 
     }
     componentDidMount() {
@@ -108,7 +117,7 @@ class ArticleList extends React.Component {
         const { Search } = Input;
         return (
             <div>
-                
+
                 <div className='listandfilter'>
                     <div className="searchAndAdd" >
                         {
@@ -134,7 +143,7 @@ class ArticleList extends React.Component {
                         }
 
                     </div>
-                    
+
                 </div>
 
                 <h2>{
@@ -162,7 +171,7 @@ class ArticleList extends React.Component {
                         :
                         <p></p>
                 }</h2>
-                <div className = "listcard">
+                <div className="listcard">
                     <Card>
                         <Articles data={this.state.articles} />
                     </Card>

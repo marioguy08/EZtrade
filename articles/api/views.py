@@ -12,7 +12,7 @@ class ArticleViewSet(viewsets.ModelViewSet):
     serializer_class = ArticleSerializer
     queryset = Article.objects.all()
     filter_backends = [DjangoFilterBackend,filters.SearchFilter]
-    filterset_fields = ['createdBy','traded']
+    filterset_fields = ['createdBy','traded','city']
     search_fields = ['title']
     authentication_classes = (TokenAuthentication,) # Add this line
     permission_classes = (IsAuthenticated,)

@@ -12,14 +12,6 @@ code {
     monospace;
 }
 
-.photo {
-  height: 100px;
-  width: 150px;
-  text-align: left;
-  position: relative;
-  left: 0px;
-  margin-right: 2rem;
-}
 
 .randomText{
   margin-right: 1rem;
@@ -76,6 +68,28 @@ code {
 }
 .filtersearch{
   width: 10rem;
+}
+.photo {
+  height: 100px;
+  width: 150px;
+  position: relative;
+  left: 0px;
+  margin-right: 2rem;
+  float: left;
+
+}
+.mainlist{
+  
+
+}
+.mainlisttext{
+  display: inline;
+}
+.mainlisttitle{
+  font-size: 1.5rem;
+}
+.AutoComplete{
+  
 }
 
 

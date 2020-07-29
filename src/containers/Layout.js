@@ -32,8 +32,7 @@ class CustomLayout extends React.Component {
         })
     }
     handlecity2(val) {
-
-        if (val == null) {
+        if (val == null || val == "") {
             this.setState({
                 city: ""
             })
@@ -57,7 +56,7 @@ class CustomLayout extends React.Component {
                                         onSelect={(val) => { this.handlecity(val) }}
                                         onChange={(val) => { this.handlecity2(val) }}
                                         defaultOpen={false}
-                                        style={{ width: 140 }}
+                                        style={{ width: 130 }}
                                         options={options}
                                         placeholder="Filter By City (US)"
                                         filterOption={(inputValue, option) =>
@@ -99,7 +98,7 @@ class CustomLayout extends React.Component {
 
 
                     <div className="site-layout-content">
-                        <BaseRouter searchterm={this.state.searchterm} />
+                        <BaseRouter searchterm={this.state.searchterm} city={this.state.city}/>
                     </div>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}></Footer>

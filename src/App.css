@@ -46,15 +46,7 @@
   min-height: 280px;
 }
 
-.logo {
-  width: 190px;
-  height: 110px;
-  margin-right: 5rem;
-  position: relative; /* Declared position allows for location changes */
-  top: -22px; /* Moves the image 2px closer to the top of the page */
-  right: -4.5rem;
-  
-}
+
 
 .menutop{
   display: flex;
@@ -72,10 +64,7 @@
   bottom: -1px; /* Moves the image 2px closer to the top of the page */
 }
 
-.mainlist{
-  display: flex;
 
-}
 .listedbyandcity{
   display: flex;
   
@@ -83,12 +72,8 @@
 .listedby{
   margin-right: 1rem;
 }
-.mainlisttext{
-  display: inline;
-}
-.mainlisttitle{
-  font-size: 1.5rem;
-}
+
+
 .radiobutton{
   margin-right: 2rem;
   position: relative;
@@ -131,6 +116,31 @@
 .listandfilter{
   display: flex;
   
+}
+.logo {
+  width: 190px;
+  height: 110px;
+  margin-right: 5rem;
+  position: relative; /* Declared position allows for location changes */
+  top: -22px; /* Moves the image 2px closer to the top of the page */
+  right: -5rem;
+  
+}
+@media only screen and (max-width: 800px) {
+  /* For mobile phones: */
+  .logo {
+    width: 190px;
+    height: 110px;
+    position: relative; /* Declared position allows for location changes */
+    top: -22px; /* Moves the image 2px closer to the top of the page */
+    right: -2vw;
+    margin-right: 0px;
+    
+  }
+  .filterandsearch{
+       
+    left: -7.3rem;
+  }
 }
 
 
