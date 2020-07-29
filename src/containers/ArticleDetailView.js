@@ -82,6 +82,7 @@ class ArticleDetail extends React.Component {
                             className="photo"
                             src={this.state.article.image}
                         />
+                        <br></br>
                         <div class="mainlisttext">
                             <p class="preventtextoverflow">{this.state.article.content}</p>
 

@@ -27,22 +27,23 @@ const Article = (props) => {
 
                 <List.Item>
                     <div class="mainlist">
-                        <br></br>
+
                         <img
                             className="photo"
                             src={item.image}
                         />
                         <div class="mainlisttext">
-                            <a class="mainlisttitle" href={`/articles/${item.id}`}>{item.title}</a>
-
+                            <div classname = "mobilewrapper">
+                                <a class="mainlisttitle" href={`/articles/${item.id}`}><p class="preventtextoverflow2">{item.title}</p></a>
+                            </div>
                             <p class="preventtextoverflow" >{
-                                item.content.length > 180 ?
-                                    item.content.slice(0, 180) + "..."
+                                item.content.length > 370 ?
+                                    item.content.slice(0, 370) + "..."
                                     :
-                                    item.content.slice(0, 180)
+                                    item.content.slice(0, 370)
                             }</p>
                             <div className="listedbyandcity">
-                                <div className = "listedby">
+                                <div className="listedby">
                                     <IconText icon={MessageOutlined} text={"" + item.createdBy} key="list-vertical-message" />
                                 </div>
                                 <IconText icon={HomeOutlined} text={"" + item.city} key="list-vertical-city" />

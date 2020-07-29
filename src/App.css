@@ -67,6 +67,7 @@
 
 .listedbyandcity{
   display: flex;
+
   
 }
 .listedby{
@@ -120,12 +121,17 @@
 .logo {
   width: 190px;
   height: 110px;
-  margin-right: 5rem;
+  margin-right: 4rem;
   position: relative; /* Declared position allows for location changes */
   top: -22px; /* Moves the image 2px closer to the top of the page */
   right: -5rem;
   
 }
+
+.preventtextoverflow2{
+  margin-bottom: .2rem;
+}
+
 @media only screen and (max-width: 800px) {
   /* For mobile phones: */
   .logo {
@@ -141,6 +147,40 @@
        
     left: -7.3rem;
   }
+  .preventtextoverflow{
+    margin: auto;
+    text-align: center;
+    width:13rem;
+    word-wrap: break-word;
+  
+  }
+  .preventtextoverflow2{
+    text-align: center;
+    word-wrap: break-word;
+    width: 13rem;
+    margin-bottom: .2rem;
+  }
+  .mainlisttext{
+    margin: auto;
+  }
+  .mainlist{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .photo{
+    margin: auto;
+  }
+  .mainlisttext{
+    height: unset;
+  }
+  .listedbyandcity{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+  
 }
 
 

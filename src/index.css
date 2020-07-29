@@ -32,7 +32,7 @@ code {
 }
 .preventtextoverflow{
   
-  width:80rem;
+  width:75vw;
   word-wrap: break-word;
 
 }
@@ -43,7 +43,7 @@ code {
 .loginprofilebuttons{
   position: relative;
   bottom: -.1rem;
-  margin-left: 6vw;
+  margin-left: 8vw;
   margin-right: 4.5rem;
 }
 .link{
@@ -70,7 +70,7 @@ code {
   width: 10rem;
 }
 .photo {
-  height: 100px;
+  height: 150px;
   width: 150px;
   position: relative;
   left: 0px;
@@ -78,18 +78,13 @@ code {
   float: left;
 
 }
-.mainlist{
-  
 
-}
-.mainlisttext{
-  display: inline;
-}
 .mainlisttitle{
   font-size: 1.5rem;
-}
-.AutoComplete{
   
+}
+.mainlisttext{
+  height: 9.2rem;
 }
 
 
