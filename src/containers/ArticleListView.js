@@ -24,7 +24,6 @@ class ArticleList extends React.Component {
     updateState = updateState.bind(this)
 
     saveStateToLocalStorage() {
-        //console.log("HERE");
         // for every item in React state
         for (let key in this.state) {
             // save to localStorage
@@ -33,13 +32,11 @@ class ArticleList extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {// draws articles no matter what 
-        console.log(newProps);
         axios.get(`https://eztrade.herokuapp.com/api/articles/?traded=false&city=${newProps.city}&search=${newProps.searchterm}`)
             .then(res => {
                 this.setState({
                     articles: res.data
                 });
-                console.log(res.data)
             })
 
     }
@@ -50,7 +47,6 @@ class ArticleList extends React.Component {
                     this.setState({
                         articles: res.data
                     });
-                    console.log(res.data)
                 })
         } else {
             axios.get('https://eztrade.herokuapp.com/api/articles/?traded=false')
@@ -58,7 +54,6 @@ class ArticleList extends React.Component {
                     this.setState({
                         articles: res.data
                     });
-                    console.log(res.data)
                 })
         }
     }
@@ -69,7 +64,6 @@ class ArticleList extends React.Component {
                 this.setState({
                     articles: res.data
                 });
-                console.log(res.data)
             })
     }
     updateProductList = (newList) => {
@@ -99,7 +93,6 @@ class ArticleList extends React.Component {
                 this.setState({
                     articles: res.data
                 });
-                console.log(res.data)
             })
     }
 

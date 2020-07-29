@@ -85,7 +85,6 @@ export const authsignup = (username, email, password1, password2, city) => {
                     username: username,
                     city: city
                 }).then(res=>{
-                    console.log(res)
                 })
 
             })

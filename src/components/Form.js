@@ -29,7 +29,6 @@ class CustomForm extends React.Component {
         newItem.image = this.state.image;
         newItem.createdBy = this.props.currentUsername;
         array.push(newItem);
-        console.log(array);
         this.props.onAddProduct(array);
         Axios.defaults.headers = {
             "Content-Type": "application/json",
@@ -50,7 +49,6 @@ class CustomForm extends React.Component {
                     uploadData.append('image', this.state.selectedFile, this.state.selectedFile.name);
                     uploadData.append('createdBy', this.props.currentUsername);
                     uploadData.append('city', res.data[0].city);
-                    console.log(res.data[0].city)
                     return Axios.post('http://127.0.0.1:8000/api/articles/', uploadData).then(res => { console.log(res); }).catch(error => console.error(error));
 
                 })
@@ -63,7 +61,6 @@ class CustomForm extends React.Component {
     }
 
     fileSelectedHandler = (event) => {
-        console.log(event.target.files[0]);
         this.setState({
             selectedFile: event.target.files[0]
         })

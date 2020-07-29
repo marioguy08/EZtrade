@@ -23,9 +23,6 @@ class ArticleDetail extends React.Component {
         isUsersItem: false
     }
     componentDidMount() {
-        if (this.props.token == null) {
-            console.log('bad');
-        }
         const articleID = this.props.match.params.articleID;
         axios.get(`http://127.0.0.1:8000/api/articles/${articleID}/`)
             .then(res => {
@@ -34,13 +31,11 @@ class ArticleDetail extends React.Component {
                         isUsersItem: true
                     });
                 }
-                console.log(res);
                 this.setState({
                     article: res.data
                 });
                 axios.get(`http://127.0.0.1:8000/api/trade/?instigatorUsername=${this.props.currentUsername}&recieverProductID=${articleID}`)
                     .then(res => {
-                        console.log(res);
                         if (res.data.length > 0) {
                             this.setState({
                                 alreadyTraded: true
@@ -73,7 +68,7 @@ class ArticleDetail extends React.Component {
                 "Content-Type": "application/json",
                 Authorization: `Token ${this.props.token}`
             }
-            axios.delete(`http://127.0.0.1:8000/api/articles/${articleID}/`).then(res => console.log(res)).catch(error => console.error(error));
+            axios.delete(`http://127.0.0.1:8000/api/articles/${articleID}/`).then(res => {}).catch(error => console.error(error));
         } else {
         }
     }

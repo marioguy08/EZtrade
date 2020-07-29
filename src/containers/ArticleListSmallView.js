@@ -33,7 +33,6 @@ class ArticleListSmall extends React.Component {
     componentWillReceiveProps(newProps) {
         if (newProps.token) {
             const value = newProps.currentUsername
-            //console.log(value);
             this.setState({
                 currentUsername: value
             })
@@ -71,7 +70,6 @@ class ArticleListSmall extends React.Component {
     }
     handleRequest = (e) => {
         this.props.history.push('/');
-        console.log(this.props.currentUsername, this.state.value, this.props.itemWantedUserID, this.props.itemWantedId);
         Axios.defaults.headers = {
             "Content-Type": "application/json",
             Authorization: this.props.token
@@ -81,7 +79,7 @@ class ArticleListSmall extends React.Component {
             instigatorProductID: this.state.value,
             recieverUsername: this.props.itemWantedUserID,
             recieverProductID: this.props.itemWantedId,
-        }).then(res => { console.log(res); }).catch(error => console.error(error));
+        }).then(res => { }).catch(error => console.error(error));
     }
 
     render() {

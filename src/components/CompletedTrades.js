@@ -32,7 +32,6 @@ class CompletedList extends React.Component {
                     })
 
                 }
-                console.log(temp);
                 this.setState({
                     completed: temp
                 })
@@ -52,7 +51,6 @@ class CompletedList extends React.Component {
                         })
 
                     }
-                    console.log(temp);
                     this.setState({
                         completed: temp
                     })

@@ -102,7 +102,6 @@ class RequestList extends React.Component {
 
                 }
                 this.setState({ requests: array });
-                console.log(res)
             }).catch(error => console.error(error));
             //this.props.history.push('/');
         }
@@ -121,7 +120,7 @@ class RequestList extends React.Component {
             recieverProductID: rpid,
             completed: true,
 
-        }).then(res => console.log(res)).catch(error => console.error(error));// then remove trade request from pending trades in state
+        }).then(res => {}).catch(error => console.error(error));// then remove trade request from pending trades in state
         var array = [...this.state.requests];
         var arrayLength = array.length;
         for (var i = 0; i < arrayLength; i++) {//changes state
@@ -278,7 +277,7 @@ class RequestList extends React.Component {
         }
         axios.patch(`http://127.0.0.1:8000/api/articles/${ipid}/`, {
             traded: true
-        }).then(res => { console.log(res) })
+        }).then(res => {  })
         axios.defaults.headers = {
             "Content-Type": "application/json",
             Authorization: `Token ${this.props.token}`
@@ -286,7 +285,7 @@ class RequestList extends React.Component {
         axios.patch(`http://127.0.0.1:8000/api/articles/${rpid}/`, {
             traded: true
 
-        }).then(res => { console.log(res) })
+        }).then(res => {  })
 
 
     }

@@ -30,7 +30,7 @@ class ListedProducts extends React.Component {
                     this.setState({
                         articles: res.data
                     });
-                    console.log(res.data)
+                    
                 }).catch(error => console.error(error));
         }
 
@@ -49,7 +49,6 @@ class ListedProducts extends React.Component {
                 this.setState({
                     articles: res.data
                 });
-                console.log(res.data)
             }).catch(error => console.error(error));
 
 
