@@ -37,10 +37,10 @@ const Article = (props) => {
                                 <a class="mainlisttitle" href={`/articles/${item.id}`}><p class="preventtextoverflow2">{item.title}</p></a>
                             </div>
                             <p class="preventtextoverflow" >{
-                                item.content.length > 370 ?
-                                    item.content.slice(0, 370) + "..."
+                                item.content.length > 340 ?
+                                    item.content.slice(0, 340) + "..."
                                     :
-                                    item.content.slice(0, 370)
+                                    item.content.slice(0, 340)
                             }</p>
                             <div className="listedbyandcity">
                                 <div className="listedby">
