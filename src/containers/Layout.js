@@ -6,6 +6,7 @@ import * as actions from '../store/actions/auth';
 import CustomForm from '../components/Form';
 import BaseRouter from '../routes';
 import Logo from '../eztradelogo.png'
+import Logo2 from '../test2.png'
 import { options } from './cities'
 import Burger from '@animated-burgers/burger-squeeze'
 import HamburgerMenu from 'react-hamburger-menu'
@@ -69,7 +70,7 @@ class CustomLayout extends React.Component {
                     <div className="menutop">
 
 
-                        <a href="/"><img className="logo" src={Logo} /></a>
+                        <a href="/"><img className="logo" src={Logo2} /></a>
 
                         <div className="filterandsearch">
                             <div id="cityselector" className="cityfilter">
