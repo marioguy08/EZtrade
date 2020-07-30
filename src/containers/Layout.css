@@ -54,3 +54,18 @@
     color: white;
     border-color: #d85603;
 }
+.loginfinal:hover{
+    transition: color .05s ease-in ;
+    color: #d85603;
+    background-color: white;
+}
+.logoutfinal{
+    transition: color .05s ease-in ;
+    color: #d85603;
+    background-color: white;
+}
+.profilefinal{
+    transition: color .05s ease-in ;
+    color: #d85603;
+    background-color: white;
+}

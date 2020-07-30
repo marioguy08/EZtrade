@@ -102,10 +102,10 @@ class CustomLayout extends React.Component {
 
                                             <div className="navbuttons">
                                                 <div className="profilebutton">
-                                                    <Button style={{ fontSize: '1.3rem', height: '3.2rem', bottom: '.2rem' }}><Link to="/userprofile" className="link">{"Hi, " + this.props.currentUsername}</Link></Button>
+                                                    <Button className = "profilefinal" style={{ fontSize: '1.3rem', height: '3.2rem', bottom: '.2rem' }}><Link to="/userprofile" className="link">{"Hi, " + this.props.currentUsername}</Link></Button>
                                                 </div>
                                                 <div className="loginbutton">
-                                                    <Button style={{ fontSize: '1.3rem', height: '3.2rem', bottom: '.2rem' }} onClick={() => {
+                                                    <Button className = "logoutfinal" style={{ fontSize: '1.3rem', height: '3.2rem', bottom: '.2rem' }} onClick={() => {
                                                         this.props.logout();
                                                         window.location.reload();
                                                         this.updateChild();
@@ -113,7 +113,9 @@ class CustomLayout extends React.Component {
                                                 </div>
                                             </div>
                                             :
-                                            <Button style={{ fontSize: '1.3rem', height: '3.2rem', top: '.2rem' }}><Link to="/login">Login</Link></Button>
+                                            <div>
+                                                <Button className="loginfinal" style={{ fontSize: '1.3rem', height: '3.2rem', top: '.2rem' }}><Link to="/login">Login</Link></Button>
+                                            </div>
                                     }
                                 </div>
                                 :
@@ -142,10 +144,10 @@ class CustomLayout extends React.Component {
                             this.props.isAuthenticated ?
                                 <div className="hamnavbuttons">
                                     <div className="hamprofilebutton">
-                                        <Button className = "hamprofactual" ghost onClick={this.handleClick.bind(this)} style={{ fontSize: '1.3rem', height: '3.2rem', bottom: '.2rem' }}><Link to="/userprofile" className="link">{"Hi, " + this.props.currentUsername}</Link></Button>
+                                        <Button className="hamprofactual" ghost onClick={this.handleClick.bind(this)} style={{ fontSize: '1.3rem', height: '3.2rem', bottom: '.2rem' }}><Link to="/userprofile" className="link">{"Hi, " + this.props.currentUsername}</Link></Button>
                                     </div>
                                     <div className="hamloginbutton">
-                                        <Button className = "hamlogoutactual"ghost onClick={this.handleClick.bind(this)} style={{ fontSize: '1.3rem', height: '3.2rem', bottom: '.2rem' }} onClick={() => {
+                                        <Button className="hamlogoutactual" ghost onClick={this.handleClick.bind(this)} style={{ fontSize: '1.3rem', height: '3.2rem', bottom: '.2rem' }} onClick={() => {
                                             this.props.logout();
                                             window.location.reload();
                                         }}>Logout</Button>
