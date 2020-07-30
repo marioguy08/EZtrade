@@ -50,7 +50,6 @@
 
 .menutop{
   display: flex;
-  
 }
 .spacer{
   background-color:rgb(240,242,245);
@@ -79,6 +78,7 @@
   margin-right: 2rem;
   position: relative;
   top: 2rem;
+  left: -2rem;
 }
 .traderequestlist{
   display: flex;
@@ -139,7 +139,7 @@
     height: 110px;
     position: relative; /* Declared position allows for location changes */
     top: -22px; /* Moves the image 2px closer to the top of the page */
-    right: -2vw;
+    right: -.5rem;
     margin-right: 0px;
     
   }

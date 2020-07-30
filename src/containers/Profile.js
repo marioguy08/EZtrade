@@ -16,7 +16,7 @@ const tabList = [
   //},
   {
     key: 'PendingTrades',
-    tab: 'Incoming Trade Requests',
+    tab: 'Incoming Trade Offers',
   },
   {
     key: 'CompletedTrades',

@@ -95,9 +95,9 @@ class ArticleListSmall extends React.Component {
                 {
                     this.props.token ?
                         <div>
-                            <p>Please select one of youre items to trade below</p>
+                            <p>Please select one of your listed items to trade below:</p>
                             <Button  style={{ backgroundColor: '#00e27f', borderColor: '#00e27f' }}type="primary" htmlType="submit" class='submitButton' onClick={this.handleRequest}>
-                                Submit Trade Request
+                                Submit Trade Offer
                             </Button>
                         </div>
                         :
@@ -125,8 +125,7 @@ class ArticleListSmall extends React.Component {
                                     <List.Item>
                                         <div class="mainlist">
                                             <div class="radiobutton">
-                                                <Radio style={radioStyle} value={item.id} name={item.createdBy}>
-                                                </Radio>
+                                                <Radio style={radioStyle} value={item.id} name={item.createdBy}></Radio>
                                             </div>
                                             <img
                                                 className="photo"

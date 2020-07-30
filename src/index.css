@@ -43,15 +43,15 @@ code {
 .loginprofilebuttons{
   position: relative;
   bottom: -.1rem;
-  margin-left: 8vw;
   margin-right: 4.5rem;
+  margin-left: 7vw;
 }
 .link{
   color: #FFF;
   text-decoration: underline;
 }
 .profilebutton{
-  margin-right: 1rem;
+  margin-left: 2rem;
 }
 .navbuttons{
   display: flex;
@@ -85,6 +85,20 @@ code {
 }
 .mainlisttext{
   height: 9.2rem;
+}
+.hamburger{
+  margin-right: auto;
+  margin-left: 11.5vw;
+  bottom: -1.3rem;
+  position: relative;
+  left: -9rem;
+  float: center;
+  
+}
+.placeholder2{
+  width: 2rem;
+  height: 2rem;
+  background-color: black;
 }
 
 

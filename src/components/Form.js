@@ -51,12 +51,7 @@ class CustomForm extends React.Component {
                     uploadData.append('city', res.data[0].city);
                     return Axios.post('http://127.0.0.1:8000/api/articles/', uploadData).then(res => { console.log(res); }).catch(error => console.error(error));
 
-                })
-
-
-
-
-            
+                }) 
         }
     }
 

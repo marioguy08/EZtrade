@@ -1,0 +1,56 @@
+.sidebar{
+    position: relative;
+    float: right;
+    width: 10rem;
+    height: 15rem;
+    background-color: #d85603;
+    z-index: 33;
+    transition: right 0.3s ease-in ;
+    right: 0rem;
+    
+    
+}
+.sidebar.show{
+    right: -10rem;
+    opacity: 100;
+    
+}
+.holder{
+    height: 0px;
+}
+.layout{
+    overflow-x: hidden;
+}
+.hambutton{
+    position: relative;
+    right: -2.6rem;
+    top: 5rem;
+    
+}
+.hambutton:hover{
+    color: white;
+    border-color: #d85603;
+}
+
+.hamprofilebutton{
+    display: flex;
+}
+.hamprofactual{
+    position: relative;
+    margin-left:auto ;
+    margin-right: auto;
+    top: 2rem;
+}
+.hamloginbutton{
+    position: relative;
+    right: -2rem;
+    bottom: -4rem;
+}
+.hamprofactual:hover{
+    color: white;
+    border-color: #d85603;
+}
+.hamlogoutactual:hover{
+    color: white;
+    border-color: #d85603;
+}
