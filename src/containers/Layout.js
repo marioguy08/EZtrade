@@ -156,7 +156,7 @@ class CustomLayout extends React.Component {
                                     </div>
                                 </div>
                                 :
-                                <div classname="buttonholder">
+                                <div className="buttonholder">
                                     <Button ghost className="hambutton" onClick={this.handleClick.bind(this)} style={{ fontSize: '1.3rem', height: '3.2rem', bottom: '.2rem' }}><Link to="/login">Login</Link></Button>
                                 </div>
                         }

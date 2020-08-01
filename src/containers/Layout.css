@@ -1,7 +1,7 @@
 .sidebar{
     position: relative;
     float: right;
-    width: 10rem;
+    width: 100vw;
     height: 15rem;
     background-size: cover;
     background-image: url("https://r1.ilikewallpaper.net/iphone-8-wallpapers/download/26739/Red-Orange-Combination-Inside-Gradation-Blur-iphone-8-wallpaper-ilikewallpaper_com.jpg");
@@ -12,7 +12,7 @@
     
 }
 .sidebar.show{
-    right: -10rem;
+    right: -100vw;
     opacity: 100;
     
 }
@@ -24,7 +24,8 @@
 }
 .hambutton{
     position: relative;
-    right: -2.6rem;
+    margin-right: auto;
+    margin-left: auto;
     top: 5rem;
     
 }
@@ -36,17 +37,19 @@
 .hamprofilebutton{
     display: flex;
 }
+.hamloginbutton{
+    top: 4rem;
+    position: relative;
+    display: flex;
+
+}
 .hamprofactual{
     position: relative;
     margin-left:auto ;
     margin-right: auto;
     top: 2rem;
 }
-.hamloginbutton{
-    position: relative;
-    right: -2rem;
-    bottom: -4rem;
-}
+
 .hamprofactual:hover{
     color: white;
     border-color: #d85603;
@@ -69,4 +72,11 @@
     transition: color .05s ease-in ;
     color: #d85603;
     background-color: white;
+}
+.hamlogoutactual{
+    margin-left: auto;
+    margin-right: auto;
+}
+.buttonholder{
+    display: flex;
 }
