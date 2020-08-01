@@ -41,7 +41,11 @@ export const checkAuthTimeout = expirationTime => {
 export const authLogin = (username, password, props) => {
     return dispatch => {
         dispatch(authStart());
-        axios.defaults.withCredentials = true
+        const tempCookie = document.cookie;
+        document.cookie = '';
+        // Send your request
+
+        axios.defaults.withCredentials = false
         axios.post('https://eztrade.herokuapp.com/rest-auth/login/', {
             username: username,
             password: password
@@ -59,6 +63,7 @@ export const authLogin = (username, password, props) => {
 
                 dispatch(authFail(error))
             })
+        document.cookie = tempCookie;
     }
 }
 
@@ -85,7 +90,7 @@ export const authsignup = (username, email, password1, password2, city) => {
                 axios.post('https://eztrade.herokuapp.com/api/users/', {
                     username: username,
                     city: city
-                }).then(res=>{
+                }).then(res => {
                 })
 
             })
@@ -100,10 +105,10 @@ export const authCheckState = () => {
         const token = localStorage.getItem('token');
         const currentUsername = localStorage.getItem('currentUsername');
         var newuser = ""
-        if(currentUsername){
+        if (currentUsername) {
             newuser = currentUsername.replace(/"/g, "");
         }
-        
+
         console.log(currentUsername);
         if (token === undefined) {
             dispatch(logout());
