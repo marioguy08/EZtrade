@@ -8,12 +8,13 @@
     z-index: 33;
     transition: right 0.3s ease-in ;
     right: 0rem;
-    
+    opacity: 100;
     
 }
 .sidebar.show{
     right: -100vw;
-    opacity: 100;
+    transition: all 1s;
+    opacity: 0;
     
 }
 .holder{

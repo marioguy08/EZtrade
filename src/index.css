@@ -44,14 +44,15 @@ code {
   position: relative;
   bottom: -.1rem;
   margin-right: 4.5rem;
-  margin-left: 7vw;
+  margin-left: auto;
+  margin-left: 2rem;
 }
 .link{
   color: #FFF;
   text-decoration: underline;
 }
 .profilebutton{
-  margin-left: 2rem;
+  
 }
 .navbuttons{
   display: flex;
