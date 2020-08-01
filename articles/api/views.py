@@ -40,7 +40,12 @@ class UserDataViewSet(viewsets.ModelViewSet):
     queryset = UserData.objects.all()
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['username','city']
-    
+
+
+
+
+# Create your views here.
+
 '''
 
 
