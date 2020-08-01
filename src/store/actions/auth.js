@@ -41,10 +41,9 @@ export const checkAuthTimeout = expirationTime => {
 export const authLogin = (username, password, props) => {
     return dispatch => {
         dispatch(authStart());
-        const tempCookie = document.cookie;
-        document.cookie = '';
         // Send your request
-
+        axios.defaults.xsrfCookieName = 'csrftoken'
+        axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
         axios.defaults.withCredentials = false
         axios.post('https://eztrade.herokuapp.com/rest-auth/login/', {
             username: username,
@@ -63,7 +62,6 @@ export const authLogin = (username, password, props) => {
 
                 dispatch(authFail(error))
             })
-        document.cookie = tempCookie;
     }
 }
 

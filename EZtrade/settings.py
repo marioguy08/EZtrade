@@ -25,11 +25,6 @@ SECRET_KEY = '9ya270dtkc8c2l5lyp+1)#&+$%$@q3mfyjb+l6$3@yn2d!8bmf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHETICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication'
-    ]
-}
 ALLOWED_HOSTS = ['eztrade.herokuapp.com','localhost','127.0.0.1']
 
 AWS_ACCESS_KEY_ID = 'AKIAI7CEPYFL7PM2XKXQ'
@@ -69,6 +64,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -150,7 +146,11 @@ STATICFILES_DIRS = [
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHETICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication'
+    ]
+}
 
 #MEDIA_URL = '/media/'
 #MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),'eztrade')
