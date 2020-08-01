@@ -41,7 +41,7 @@ export const checkAuthTimeout = expirationTime => {
 export const authLogin = (username, password, props) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post('http://127.0.0.1:8000/rest-auth/login/', {
+        axios.post('https://eztrade.herokuapp.com/rest-auth/login/', {
             username: username,
             password: password
         })
@@ -64,7 +64,7 @@ export const authLogin = (username, password, props) => {
 export const authsignup = (username, email, password1, password2, city) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post('http://127.0.0.1:8000/rest-auth/registration/', {
+        axios.post('https://eztrade.herokuapp.com/rest-auth/registration/', {
             username: username,
             email: email,
             password1: password1,
@@ -81,7 +81,7 @@ export const authsignup = (username, email, password1, password2, city) => {
                     "Content-Type": "application/json",
                     Authorization: `Token ${token}`
                 }
-                axios.post('http://127.0.0.1:8000/api/users/', {
+                axios.post('https://eztrade.herokuapp.com/api/users/', {
                     username: username,
                     city: city
                 }).then(res=>{

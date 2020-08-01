@@ -19,7 +19,7 @@ class CompletedList extends React.Component {
 
     componentDidMount() {
         var temp = []
-        axios.get(`http://127.0.0.1:8000/api/trade/?recieverUsername=${this.props.currentUsername}&completed=true`)
+        axios.get(`https://eztrade.herokuapp.com/api/trade/?recieverUsername=${this.props.currentUsername}&completed=true`)
             .then(res => {
                 var arrayLength = res.data.length;
                 for (let i = 0; i < arrayLength; i++) {
@@ -37,7 +37,7 @@ class CompletedList extends React.Component {
                 })
 
             })
-        axios.get(`http://127.0.0.1:8000/api/trade/?instigatorUsername=${this.props.currentUsername}&completed=true`)
+        axios.get(`https://eztrade.herokuapp.com/api/trade/?instigatorUsername=${this.props.currentUsername}&completed=true`)
             .then(res => {
                 var arrayLength = res.data.length;
                 if (arrayLength >= 0) {

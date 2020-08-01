@@ -30,7 +30,7 @@ class RequestList extends React.Component {
                 "Content-Type": "application/json",
                 Authorization: `Token ${this.props.token}`
             }
-            axios.get(`http://localhost:8000/api/trade/?recieverUsername=${this.props.currentUsername}&completed=false`)
+            axios.get(`https://eztrade.herokuapp.com/api/trade/?recieverUsername=${this.props.currentUsername}&completed=false`)
                 .then(res => {
                 
                     var array = res.data;
@@ -38,7 +38,7 @@ class RequestList extends React.Component {
                     for (let i = 0; i < arrayLength; i++) {
                         var itemid = array[i].instigatorProductID;
                         var itemid2 = array[i].recieverProductID;
-                        axios.get(`http://localhost:8000/api/articles/${itemid}/`)
+                        axios.get(`https://eztrade.herokuapp.com/api/articles/${itemid}/`)
                             .then(res => {
                                 
                                 var temp = i;
@@ -50,7 +50,7 @@ class RequestList extends React.Component {
                                     requests: array
                                 });
                             }).catch(error => console.error(error));
-                        axios.get(`http://localhost:8000/api/articles/${itemid2}/`)
+                        axios.get(`https://eztrade.herokuapp.com/api/articles/${itemid2}/`)
                             .then(res => {
                                
                                 var temp = i;
@@ -91,7 +91,7 @@ class RequestList extends React.Component {
                 "Content-Type": "application/json",
                 Authorization: `Token ${this.props.token}`
             }
-            axios.delete(`http://127.0.0.1:8000/api/trade/${id}`).then(res => {
+            axios.delete(`https://eztrade.herokuapp.com/api/trade/${id}`).then(res => {
                 var array = [...this.state.requests];
                 var arrayLength = array.length;
                 for (var i = 0; i < arrayLength; i++) {
@@ -113,7 +113,7 @@ class RequestList extends React.Component {
             Authorization: `Token ${this.props.token}`
         }
 
-        axios.put(`http://127.0.0.1:8000/api/trade/${id}/`, {//marks trade as completed
+        axios.put(`https://eztrade.herokuapp.com/api/trade/${id}/`, {//marks trade as completed
             instigatorUsername: iusername,
             instigatorProductID: ipid,
             recieverUsername: this.props.currentUsername,
@@ -131,7 +131,7 @@ class RequestList extends React.Component {
 
         }
         this.setState({ requests: array });
-        axios.get(`http://localhost:8000/api/trade/?instigatorProductID=${ipid}`)// 1.Delete offers made using instigators product
+        axios.get(`https://eztrade.herokuapp.com/api/trade/?instigatorProductID=${ipid}`)// 1.Delete offers made using instigators product
             .then(res => {
                 var array = res.data
                 var arrayLength = array.length;
@@ -146,7 +146,7 @@ class RequestList extends React.Component {
                         "Content-Type": "application/json",
                         Authorization: `Token ${this.props.token}`
                     }
-                    axios.delete(`http://localhost:8000/api/trade/${toDelete[i]}/`)
+                    axios.delete(`https://eztrade.herokuapp.com/api/trade/${toDelete[i]}/`)
                         .then(res => {
                         })
                 }
@@ -165,7 +165,7 @@ class RequestList extends React.Component {
                 }
                 this.setState({ requests: array2 });
             })
-        axios.get(`http://localhost:8000/api/trade/?recieverProductID=${rpid}`)// 2.delete offers recieved that ask for the recievers product
+        axios.get(`https://eztrade.herokuapp.com/api/trade/?recieverProductID=${rpid}`)// 2.delete offers recieved that ask for the recievers product
             .then(res => {
                 var array = res.data
                 var arrayLength = array.length;
@@ -180,7 +180,7 @@ class RequestList extends React.Component {
                         "Content-Type": "application/json",
                         Authorization: `Token ${this.props.token}`
                     }
-                    axios.delete(`http://localhost:8000/api/trade/${toDelete[i]}/`)
+                    axios.delete(`https://eztrade.herokuapp.com/api/trade/${toDelete[i]}/`)
                         .then(res => {
 
                         })
@@ -200,7 +200,7 @@ class RequestList extends React.Component {
                 }
                 this.setState({ requests: array2 });
             })
-        axios.get(`http://localhost:8000/api/trade/?instigatorProductID=${rpid}`)// 3.delete offers made using the recievers product
+        axios.get(`https://eztrade.herokuapp.com/api/trade/?instigatorProductID=${rpid}`)// 3.delete offers made using the recievers product
             .then(res => {
                 var array = res.data
                 var arrayLength = array.length;
@@ -215,7 +215,7 @@ class RequestList extends React.Component {
                         "Content-Type": "application/json",
                         Authorization: `Token ${this.props.token}`
                     }
-                    axios.delete(`http://localhost:8000/api/trade/${toDelete[i]}/`)
+                    axios.delete(`https://eztrade.herokuapp.com/api/trade/${toDelete[i]}/`)
                         .then(res => {
                         })
                 }
@@ -235,7 +235,7 @@ class RequestList extends React.Component {
                 this.setState({ requests: array2 });
 
             })
-        axios.get(`http://localhost:8000/api/trade/?recieverProductID=${ipid}`)// 4.delete offers recieved that ask for the instigatos product
+        axios.get(`https://eztrade.herokuapp.com/api/trade/?recieverProductID=${ipid}`)// 4.delete offers recieved that ask for the instigatos product
             .then(res => {
                 var array = res.data
                 var arrayLength = array.length;
@@ -250,7 +250,7 @@ class RequestList extends React.Component {
                         "Content-Type": "application/json",
                         Authorization: `Token ${this.props.token}`
                     }
-                    axios.delete(`http://localhost:8000/api/trade/${toDelete[i]}/`)
+                    axios.delete(`https://eztrade.herokuapp.com/api/trade/${toDelete[i]}/`)
                         .then(res => {
 
                         })
@@ -275,14 +275,14 @@ class RequestList extends React.Component {
             "Content-Type": "application/json",
             Authorization: `Token ${this.props.token}`
         }
-        axios.patch(`http://127.0.0.1:8000/api/articles/${ipid}/`, {
+        axios.patch(`https://eztrade.herokuapp.com/api/articles/${ipid}/`, {
             traded: true
         }).then(res => {  })
         axios.defaults.headers = {
             "Content-Type": "application/json",
             Authorization: `Token ${this.props.token}`
         }
-        axios.patch(`http://127.0.0.1:8000/api/articles/${rpid}/`, {
+        axios.patch(`https://eztrade.herokuapp.com/api/articles/${rpid}/`, {
             traded: true
 
         }).then(res => {  })

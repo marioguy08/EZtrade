@@ -25,7 +25,7 @@ class ListedProducts extends React.Component {
                 "Content-Type": "application/json",
                 Authorization: `Token ${this.props.token}`
             }
-            axios.get(`http://127.0.0.1:8000/api/articles/?createdBy=${this.props.currentUsername}&traded=false`)
+            axios.get(`https://eztrade.herokuapp.com/api/articles/?createdBy=${this.props.currentUsername}&traded=false`)
                 .then(res => {
                     this.setState({
                         articles: res.data
@@ -44,7 +44,7 @@ class ListedProducts extends React.Component {
             "Content-Type": "application/json",
             Authorization: `Token ${newProps.token}`
         }
-        axios.get(`http://127.0.0.1:8000/api/articles/?createdBy=${newProps.currentUsername}&traded=false`)
+        axios.get(`https://eztrade.herokuapp.com/api/articles/?createdBy=${newProps.currentUsername}&traded=false`)
             .then(res => {
                 this.setState({
                     articles: res.data

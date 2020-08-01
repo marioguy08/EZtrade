@@ -40,7 +40,7 @@ class ArticleListSmall extends React.Component {
                 "Content-Type": "application/json",
                 Authorization: `Token ${newProps.token}`
             }
-            axios.get(`http://localhost:8000/api/articles/?createdBy=${newProps.currentUsername}&traded=false`)
+            axios.get(`https://eztrade.herokuapp.com/api/articles/?createdBy=${newProps.currentUsername}&traded=false`)
                 .then(res => {
                     this.setState({
                         articles: res.data
@@ -74,7 +74,7 @@ class ArticleListSmall extends React.Component {
             "Content-Type": "application/json",
             Authorization: this.props.token
         }
-        return Axios.post("http://127.0.0.1:8000/api/trade/", {
+        return Axios.post("https://eztrade.herokuapp.com/api/trade/", {
             instigatorUsername: this.props.currentUsername,
             instigatorProductID: this.state.value,
             recieverUsername: this.props.itemWantedUserID,
