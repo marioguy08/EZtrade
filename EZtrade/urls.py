@@ -28,7 +28,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('articles.api.urls')),
     path('rest-auth/', include('rest_auth.urls')),
-    path('rest-auth/login/', LoginViewCustom.as_view(), name='rest_login'),
     path('rest-auth/registration/', include('rest_auth.registration.urls')),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT,}),
     re_path('.*',TemplateView.as_view(template_name='index.html')),

@@ -41,6 +41,7 @@ export const checkAuthTimeout = expirationTime => {
 export const authLogin = (username, password, props) => {
     return dispatch => {
         dispatch(authStart());
+        axios.defaults.withCredentials = true
         axios.post('https://eztrade.herokuapp.com/rest-auth/login/', {
             username: username,
             password: password
