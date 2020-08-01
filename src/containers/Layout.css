@@ -3,7 +3,8 @@
     float: right;
     width: 10rem;
     height: 15rem;
-    background-color: #d85603;
+    background-size: cover;
+    background-image: url("https://r1.ilikewallpaper.net/iphone-8-wallpapers/download/26739/Red-Orange-Combination-Inside-Gradation-Blur-iphone-8-wallpaper-ilikewallpaper_com.jpg");
     z-index: 33;
     transition: right 0.3s ease-in ;
     right: 0rem;

@@ -52,7 +52,7 @@ class CustomForm extends React.Component {
                     return Axios.post('http://127.0.0.1:8000/api/articles/', uploadData).then(res => { console.log(res); }).catch(error => console.error(error));
 
                 })
- 
+
         }
     }
 
@@ -76,15 +76,17 @@ class CustomForm extends React.Component {
                     </Form.Item>
 
                     <Form.Item label="Description:">
-                        <Input.TextArea name="content" placeholder="Enter important information about youre item" />
+                        <Input.TextArea name="content" placeholder="Enter important information about your item" />
                     </Form.Item>
                     <FormItem label="Photo:">
-                        <input type="file" onChange={this.fileSelectedHandler}>
-                        </input>
+                        <div className = "uploadButton">
+                            <input type="file" onChange={this.fileSelectedHandler}>
+                            </input>
+                        </div>
                     </FormItem>
 
                     <Form.Item >
-                        <Button  type="primary" htmlType="submit">{this.props.btnText}</Button>
+                        <Button type="primary" htmlType="submit">{this.props.btnText}</Button>
                     </Form.Item>
                 </Form>
             </div>

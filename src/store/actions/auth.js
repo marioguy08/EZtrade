@@ -68,6 +68,8 @@ export const authLogin = (username, password, props) => {
 
 export const authsignup = (username, email, password1, password2, city) => {
     return dispatch => {
+        axios.defaults.xsrfCookieName = 'csrftoken'
+        axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
         dispatch(authStart());
         axios.post('https://eztrade.herokuapp.com/rest-auth/registration/', {
             username: username,

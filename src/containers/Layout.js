@@ -163,7 +163,7 @@ class CustomLayout extends React.Component {
 
                     </div>
                 </div>
-                <Content style={{ padding: '0 50px' }}>
+                <Content style={{ padding: '0 3vw' }}>
                     <div className="site-layout-content">
                         <BaseRouter searchterm={this.state.searchterm} city={this.state.city} />
                     </div>
