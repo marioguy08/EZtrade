@@ -114,8 +114,6 @@ class CustomLayout extends React.Component {
                                                             Authorization: `Token ${this.props.token}`
                                                         }
                                                         axios.post('https://eztrade.herokuapp.com/rest-auth/logout/').then(res => { console.log(res); }).catch(error => console.error(error));
-                                                        window.location.reload();
-                                                        this.updateChild();
                                                     }}>Logout</Button>
                                                 </div>
                                             </div>
