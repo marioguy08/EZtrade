@@ -109,11 +109,8 @@ class CustomLayout extends React.Component {
                                                 <div className="loginbutton">
                                                     <Button className="logoutfinal" style={{ fontSize: '1.3rem', height: '3.2rem', bottom: '.2rem' }} onClick={() => {
                                                         this.props.logout();
-                                                        axios.defaults.headers = {
-                                                            "Content-Type": "application/json",
-                                                            Authorization: `Token ${this.props.token}`
-                                                        }
-                                                        axios.post('https://eztrade.herokuapp.com/rest-auth/logout/').then(res => { console.log(res); }).catch(error => console.error(error));
+                                                        delete axios.defaults.headers.common["Authorization"];
+                                                        
                                                     }}>Logout</Button>
                                                 </div>
                                             </div>
