@@ -8,6 +8,7 @@ import BaseRouter from '../routes';
 import Logo from '../eztradelogo.png'
 import Logo2 from '../test2.png'
 import { options } from './cities'
+import axios from 'axios';
 import Burger from '@animated-burgers/burger-squeeze'
 import HamburgerMenu from 'react-hamburger-menu'
 // don't forget the stylesnpm i react-hamburger-menu
