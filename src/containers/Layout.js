@@ -97,7 +97,7 @@ class CustomLayout extends React.Component {
                         </div>
 
                         {
-                            this.state.innerWidth > 750 ?
+                            this.state.innerWidth > 725 ?
                                 <div className="loginprofilebuttons" >
                                     {
                                         this.props.isAuthenticated ?
