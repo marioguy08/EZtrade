@@ -334,7 +334,7 @@ class RequestList extends React.Component {
                                             <a class="justtext" href={`/articles/${item.recieverProductID}`}>{item.recieverProductTitle}</a>
                                         </div>
                                     </div>
-                                    <div class="littlearrow"><DoubleRightOutlined /></div>
+                                    <div className="littlearrow"><DoubleRightOutlined /></div>
                                     <div class="offerborder">
                                         <div class="imageplustext">
                                             <p class="justtext">Item being offered</p>

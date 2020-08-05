@@ -102,7 +102,7 @@ class ArticleDetail extends React.Component {
                             }
 
                             <form onSubmitCapture={this.handleDelete}>
-                                <Button style={{ backgroundColor: '#fa1212', borderColor: '#fa1212' }} type="danger" htmlType="submit">Delete (all data related to this listing will be gone forever)</Button>
+                                <Button style={{ backgroundColor: '#fa1212', borderColor: '#fa1212' }} type="danger" htmlType="submit">Delete (permenant)</Button>
 
                             </form>
                         </div>
