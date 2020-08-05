@@ -24,6 +24,7 @@ const store = createStore(reducer, composeEnhances(
 const app = (
 
   <Provider store={store}>
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico"/>
     <Helmet>
       <title>{TITLE}</title>
     </Helmet>
